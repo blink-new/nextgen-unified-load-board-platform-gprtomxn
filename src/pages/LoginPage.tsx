@@ -14,14 +14,24 @@ export default function LoginPage() {
   const [isLoading, setIsLoading] = useState(false)
   const [activeTab, setActiveTab] = useState('signin')
 
-  const handleSignIn = () => {
+  const handleSignIn = async () => {
     setIsLoading(true)
-    blink.auth.login('/dashboard')
+    try {
+      await blink.auth.login(window.location.origin + '/dashboard')
+    } catch (error) {
+      console.error('Login error:', error)
+      setIsLoading(false)
+    }
   }
 
-  const handleSignUp = () => {
+  const handleSignUp = async () => {
     setIsLoading(true)
-    blink.auth.login('/dashboard')
+    try {
+      await blink.auth.login(window.location.origin + '/dashboard')
+    } catch (error) {
+      console.error('Signup error:', error)
+      setIsLoading(false)
+    }
   }
 
   return (
@@ -108,6 +118,17 @@ export default function LoginPage() {
                     disabled={isLoading}
                   >
                     {isLoading ? 'Signing In...' : 'Sign In'}
+                  </Button>
+                  
+                  <Button 
+                    variant="outline"
+                    className="w-full" 
+                    onClick={() => {
+                      console.log('Testing Blink auth...')
+                      blink.auth.login()
+                    }}
+                  >
+                    Quick Login (Test)
                   </Button>
                   
                   <div className="text-center">

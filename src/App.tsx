@@ -20,7 +20,9 @@ function App() {
 
   useEffect(() => {
     const unsubscribe = blink.auth.onAuthStateChanged((state) => {
+      console.log('Auth state changed:', state)
       if (state.user) {
+        console.log('User authenticated:', state.user)
         // Convert Blink user to our User type
         const userData: User = {
           id: state.user.id,
@@ -33,6 +35,7 @@ function App() {
         }
         setUser(userData)
       } else {
+        console.log('User not authenticated')
         setUser(null)
       }
       setLoading(state.isLoading)
