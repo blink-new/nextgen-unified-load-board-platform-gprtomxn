@@ -120,17 +120,6 @@ export default function LoginPage() {
                     {isLoading ? 'Signing In...' : 'Sign In'}
                   </Button>
                   
-                  <Button 
-                    variant="outline"
-                    className="w-full" 
-                    onClick={() => {
-                      console.log('Testing Blink auth...')
-                      blink.auth.login()
-                    }}
-                  >
-                    Quick Login (Test)
-                  </Button>
-                  
                   <div className="text-center">
                     <Link to="#" className="text-sm text-accent hover:underline">
                       Forgot your password?
