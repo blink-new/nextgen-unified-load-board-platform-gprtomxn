@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* HaulCentral Color Scheme - Grey Background with Orange Accents */
+    --background: 0 0% 25%; /* #404040 - grey background */
+    --foreground: 0 0% 100%; /* white text */
+    --card: 0 0% 32%; /* #525252 - lighter grey for cards */
+    --card-foreground: 0 0% 100%; /* white text on cards */
+    --popover: 0 0% 32%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 0 0% 25%; /* grey primary */
+    --primary-foreground: 0 0% 100%; /* white text on primary */
+    --secondary: 0 0% 38%; /* #606060 - secondary grey */
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 38%; /* muted grey */
+    --muted-foreground: 0 0% 78%; /* #c8c8c8 - light grey text */
+    --accent: 25 95% 61%; /* #fb9234 - orange for tabs */
+    --accent-foreground: 0 0% 100%;
+    --success: 142 76% 36%; /* #22c55e - success green */
+    --warning: 38 92% 50%; /* #f59e0b - warning amber */
+    --destructive: 0 84% 60%; /* #ef4444 - danger red */
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 50%; /* #808080 - grey border */
+    --input: 0 0% 38%; /* grey input background */
+    --ring: 25 95% 61%; /* orange focus ring */
+    --chart-1: 25 95% 61%;
+    --chart-2: 142 76% 36%;
+    --chart-3: 217 91% 60%;
+    --chart-4: 38 92% 50%;
+    --chart-5: 0 84% 60%;
+    --radius: 0.5rem;
+    
+    /* Sidebar variables */
+    --sidebar-background: 0 0% 32%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 0 0% 25%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 25 95% 61%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 0 0% 50%;
+    --sidebar-ring: 25 95% 61%;
+  }
+
+  .dark {
+    --background: 0 0% 20%; /* darker grey */
+    --foreground: 0 0% 100%;
+    --card: 0 0% 25%; /* darker grey for cards */
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 25%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 25 95% 61%; /* orange primary in dark mode */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 32%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 32%;
+    --muted-foreground: 0 0% 70%;
+    --accent: 25 95% 61%;
+    --accent-foreground: 0 0% 100%;
+    --success: 142 76% 36%;
+    --warning: 38 92% 50%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 40%;
+    --input: 0 0% 32%;
+    --ring: 25 95% 61%;
+    --chart-1: 25 95% 61%;
+    --chart-2: 142 76% 36%;
+    --chart-3: 217 91% 60%;
+    --chart-4: 38 92% 50%;
+    --chart-5: 0 84% 60%;
+    
+    /* Dark sidebar variables */
+    --sidebar-background: 0 0% 25%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 25 95% 61%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 32%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 0 0% 40%;
+    --sidebar-ring: 25 95% 61%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
